@@ -2,11 +2,13 @@ import "@/src/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
-import { Providers } from "./providers";
+import { Providers } from "../providers";
 
 import { siteConfig } from "@/src/config/site";
 import { fontSans } from "@/src/config/fonts";
 import { Navbar } from "@/src/components/navbar";
+import { Provider } from "react-redux";
+import { store } from "@/src/redux/store";
 
 export const metadata: Metadata = {
   title: {
