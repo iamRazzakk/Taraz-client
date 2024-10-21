@@ -2,21 +2,30 @@
 
 import TForm from "@/src/components/Form/TForm";
 import TInput from "@/src/components/Form/TInput";
-import { useAppDispatch } from "@/src/redux/hooks";
 import { useSignUpMutation } from "@/src/redux/Provider/Api/AuthAPi/authApi";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
+// import { useRouter } from "next/router";
 import { FieldValues, SubmitHandler } from "react-hook-form";
+import { toast } from "sonner";
 
 export default function RegisterPage() {
+  // const router = useRouter();
   const [signUp, { isLoading, error }] = useSignUpMutation();
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const userData = {
       ...data,
+      role: "USER",
     };
-    console.log(userData);
-    // handleUserRegistration(userData);
+    // console.log(userData);
+    try {
+      const response = await signUp(userData).unwrap();
+      toast.success("Registration successful");
+      // router.push("/login");
+    } catch (error) {
+      toast.error("Failed to register. Please try again.");
+    }
   };
 
   return (
