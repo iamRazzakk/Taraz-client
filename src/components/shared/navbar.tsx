@@ -89,6 +89,9 @@ export const Navbar = () => {
           >
             Sponsor
           </Button>
+          <Link className="lg:ml-4" href="/dashboard">
+            Dashboard
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
