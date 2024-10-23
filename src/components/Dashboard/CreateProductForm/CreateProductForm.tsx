@@ -1,36 +1,53 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import TForm from "../../Form/TForm";
-import TInput from "../../Form/TInput";
 import { Input } from "@nextui-org/input";
 
 const CreateProductForm = ({ onSubmit }) => {
   return (
-    <TForm onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <div className="py-3">
-        <TInput label="Product Name" name="name" size="sm" type="text" />
-      </div>
-      <div className="py-3">
-        <TInput label="Price" name="price" size="sm" type="number" />
-      </div>
-      <div className="py-3">
-        <TInput
-          label="Stock Quantity"
-          type="number"
-          name="stockQuantity"
+        <Input
+          label="Product Name"
+          name="name"
           size="sm"
+          type="text"
+          fullWidth
         />
       </div>
       <div className="py-3">
-        <TInput label="Category" name="category" size="sm" />
+        <Input label="Price" name="price" size="sm" type="number" fullWidth />
       </div>
       <div className="py-3">
-        <TInput label="Brand" name="brand" size="sm" />
+        <Input
+          label="Stock Quantity"
+          name="stockQuantity"
+          size="sm"
+          type="number"
+          fullWidth
+        />
       </div>
       <div className="py-3">
-        {/* <TInput label="File" name="images" type="file" size="sm" multiple /> */}
-        <Input size="sm" type="file" label="File" multiple />
+        <Input
+          label="Category"
+          name="category"
+          size="sm"
+          type="text"
+          fullWidth
+        />
+      </div>
+      <div className="py-3">
+        <Input label="Brand" name="brand" size="sm" type="text" fullWidth />
+      </div>
+      <div className="py-3">
+        <Input
+          name="images"
+          size="sm"
+          type="file"
+          label="File"
+          multiple
+          fullWidth
+        />
       </div>
 
       <Button
@@ -40,7 +57,7 @@ const CreateProductForm = ({ onSubmit }) => {
       >
         Create Product
       </Button>
-    </TForm>
+    </form>
   );
 };
 
