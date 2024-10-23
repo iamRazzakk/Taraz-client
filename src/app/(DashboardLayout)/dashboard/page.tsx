@@ -1,6 +1,3 @@
-import Header from "@/src/components/Dashboard/Header";
-import Sidebar from "@/src/components/Dashboard/Sidebar";
-
 const DashboardPage = () => {
   return (
     <div className="p-6">

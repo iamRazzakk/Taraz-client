@@ -44,7 +44,7 @@ const Sidebar = () => {
           <ul>
             <li className="px-6 py-3 hover:bg-indigo-500 transition-colors flex items-center">
               <FiHome className="mr-2" />
-              <a href="#">Dashboard</a>
+              <Link href="/dashboard/me">Dashboard</Link>
             </li>
             <li className="px-6 py-3 hover:bg-indigo-500 transition-colors flex items-center">
               <FiBox className="mr-2" />
